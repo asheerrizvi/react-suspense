@@ -37,11 +37,12 @@ const pokemonResourceCache = {}
 // and inserts it into the cache. Finally the function should return the
 // resource.
 function getPokemonResource(name) {
-  if (pokemonResourceCache[name]) {
-    return pokemonResourceCache[name]
+  const lowerName = name.toLowerCase()
+  if (pokemonResourceCache[lowerName]) {
+    return pokemonResourceCache[lowerName]
   }
-  const resource = createPokemonResource(name)
-  pokemonResourceCache[name] = resource
+  const resource = createPokemonResource(lowerName)
+  pokemonResourceCache[lowerName] = resource
   return resource
 }
 
